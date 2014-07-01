@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://com.services.epam.ivanov.mentoring.service/" xmlns:tns="http://com.services.epam.ivanov.mentoring.service/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="currencyConvertation" type="tns:currencyConvertation"/>
+
+  <xs:element name="currencyConvertationResponse" type="tns:currencyConvertationResponse"/>
+
+  <xs:element name="getCurrencyExchangeRate" type="tns:getCurrencyExchangeRate"/>
+
+  <xs:element name="getCurrencyExchangeRateResponse" type="tns:getCurrencyExchangeRateResponse"/>
+
+  <xs:complexType name="getCurrencyExchangeRate">
+    <xs:sequence>
+      <xs:element name="fromCurrency" type="xs:string" minOccurs="0"/>
+      <xs:element name="toCurrency" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCurrencyExchangeRateResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="currencyConvertation">
+    <xs:sequence>
+      <xs:element name="fromCurrency" type="xs:string" minOccurs="0"/>
+      <xs:element name="toCurrency" type="xs:string" minOccurs="0"/>
+      <xs:element name="currencyAmount" type="xs:double" minOccurs="0"/>
+      <xs:element name="date" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="currencyConvertationResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
