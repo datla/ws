@@ -6,7 +6,7 @@ import javax.jws.WebService;
 import java.util.Date;
 
 /**
- * Created by Андрей on 01.07.2014.
+ * Created by Ð�Ð½Ð´Ñ€ÐµÐ¹ on 01.07.2014.
  */
 
 @WebService(portName = "ConvertationPort",
@@ -24,7 +24,7 @@ public class ConvertationImpl implements ConvertationWS {
         } else if (currentDate.after(date)) {
             currentRate = ExchangeRates.valueOf(fromCurrency + toCurrency).getRate() * 0.75;
         } else {
-            currentRate = currentRate = ExchangeRates.valueOf(fromCurrency + toCurrency).getRate();
+            currentRate = ExchangeRates.valueOf(fromCurrency + toCurrency).getRate();
         }
         fromCurrencyAmount *= currentRate;
         return fromCurrencyAmount;
